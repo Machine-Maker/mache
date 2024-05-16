@@ -1,5 +1,7 @@
+import io.papermc.sculptor.shared.util.MinecraftJarType
+
 plugins {
-    id("io.papermc.sculptor.version") version "1.0.7"
+    id("io.papermc.sculptor.version") version "1.0.8-SNAPSHOT"
 }
 
 val generateReportsProperty = providers.gradleProperty("generateReports")
@@ -27,6 +29,7 @@ mache {
             "--all-reports",
         ))
     }
+    minecraftJarType = MinecraftJarType.CLIENT
 
     remapperArgs.set(args)
 }
